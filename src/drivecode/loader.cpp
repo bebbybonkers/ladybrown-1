@@ -7,7 +7,7 @@ int loaderState = 0;
 bool loaderButtonPressed = false;
 
 void updateLoader() {
-    if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_UP)){
+    if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2)){
         if(!loaderButtonPressed) {
             loaderState++;
             loaderButtonPressed = true;
