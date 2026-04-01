@@ -1,11 +1,13 @@
 #include "drivecode/loader.hpp"
 #include "drivecode/objects.hpp"
+//matchloader
 
 pros::adi::AnalogOut loader('A');
 
 int loaderState = 0;
 bool loaderButtonPressed = false;
 
+//matchloader updates based on state
 void updateLoader() {
     if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_UP)){
         if(!loaderButtonPressed) {

@@ -1,12 +1,13 @@
 #include "drivecode/intake.hpp"
 #include "drivecode/objects.hpp"
-
+// intake + outtake
 
 pros::Motor intake(0);
 
 int intakeState = 0;
 bool button1Pressed = false;
 
+//intake updates based on state
 void updateIntake() {
     if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1)) {
         if(!button1Pressed) {
@@ -24,6 +25,10 @@ void updateIntake() {
     }
 }
 
+int outtakeState = 0;
+bool button2Pressed = false;
+
+// outtake updates based on state
 void updateOuttake() {
     if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_L2)) {
         if(!button2Pressed) {

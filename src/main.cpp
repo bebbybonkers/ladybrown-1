@@ -84,12 +84,14 @@ void autonomous() {}
  */
 void opcontrol() {
 	while(true){
+		// update all subsystems
         updateIntake();
         updateLoader();
         updateScoring();
         updateTrapdoor();
 		updateWing();
 		
+		// double stick arcade drive
 		chassis.arcade(controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y),
 		controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y));
 		

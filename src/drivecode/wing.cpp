@@ -1,11 +1,12 @@
 #include "drivecode/wing.hpp"
 #include "drivecode/objects.hpp"
-
+//descore wing code
 pros::adi::AnalogOut wing('A'); 
 
 int wingState = 0;
 bool wingButtonPressed = false;
 
+//uses state system
 void updateWing() {
     if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_R2)) { 
         if(!wingButtonPressed) {
