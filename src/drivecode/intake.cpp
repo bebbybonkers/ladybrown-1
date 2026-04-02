@@ -5,14 +5,14 @@
 pros::Motor intake(intakePort);
 
 int intakeState = 0;
-bool button1Pressed = false;
+bool intakePressed = false;
 
 //intake updates based on state
 void updateIntake() {
     if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1)) {
-        if(!button1Pressed) {
+        if(!intakePressed) {
             intakeState+=1;
-            button1Pressed = true;
+            intakePressed = true;
             if(intakeState == 0) {
                 intake.move_velocity(0);
             } else if(intakeState == 1) {
@@ -20,20 +20,20 @@ void updateIntake() {
                 intakeState = -1;
             }
         } else {
-            button1Pressed = false;
+            intakePressed = false;
         }
     }
 }
 
 int outtakeState = 0;
-bool button2Pressed = false;
+bool outtakePressed = false;
 
 // outtake updates based on state
 void updateOuttake() {
     if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_L2)) {
-        if(!button2Pressed) {
+        if(!outtakePressed) {
             outtakeState++;
-            button2Pressed = true;
+            outtakePressed = true;
             if(outtakeState == 0) {
                 intake.move_velocity(0);
             } else if(outtakeState == 1) {
@@ -41,7 +41,7 @@ void updateOuttake() {
                 outtakeState = -1;
             }
         } else {
-            button2Pressed = false;
+            outtakePressed = false;
         }
     }
 }

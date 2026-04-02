@@ -5,14 +5,14 @@
 pros::Motor scoring(scoringPort);
 
 int scoringState = 0;
-bool button2Pressed = false;
+bool scoringPressed = false;
 
 //scoring updates based on state
 void updateScoring() {
     if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1)) {
-        if(!button2Pressed) {
+        if(!scoringPressed) {
             scoringState+=1;
-            button2Pressed = true;
+            scoringPressed = true;
             if(scoringState == 0) {
                 scoring.move_velocity(0);
             } else if(scoringState == 1) {
@@ -20,7 +20,7 @@ void updateScoring() {
                 scoringState = -1;
             }
         } else {
-            button2Pressed = false;
+            scoringPressed = false;
         }
     }
 }

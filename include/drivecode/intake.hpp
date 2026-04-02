@@ -8,5 +8,5 @@ void updateOuttake();
 
 extern int intakeState;
 extern int outtakeState;
-extern bool button1Pressed;
-extern bool button2Pressed;
+extern bool intakePressed;
+extern bool outtakePressed;
