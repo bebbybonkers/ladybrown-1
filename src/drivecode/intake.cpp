@@ -25,20 +25,20 @@ void updateIntake() {
     }
 }
 
-int outtakeState = 0;
+
 bool outtakePressed = false;
 
 // outtake updates based on state
 void updateOuttake() {
     if(controller.get_digital(outtakeButton)) {
         if(!outtakePressed) {
-            outtakeState++;
+            intakeState++;
             outtakePressed = true;
-            if(outtakeState == 0) {
+            if(intakeState == 0) {
                 intake.move_velocity(0);
-            } else if(outtakeState == 1) {
+            } else if(intakeState == 1) {
                 intake.move_velocity(-600);
-                outtakeState = -1;
+                intakeState = -1;
             }
         } else {
             outtakePressed = false;
