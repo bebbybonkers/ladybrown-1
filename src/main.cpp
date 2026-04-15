@@ -4,7 +4,7 @@
 #include "drivecode/stake.hpp"
 #include "drivecode/clamp.hpp"
 #include "lemlib/api.hpp"
-
+#include "drivecode/tasks.hpp"
 
 
 /**
@@ -65,7 +65,11 @@ void competition_initialize() {}
  * will be stopped. Re-enabling the robot will restart the task, not re-start it
  * from where it left off.
  */
-void autonomous() {}
+void autonomous() {
+	//tasks
+	runTasks();
+	
+}
 
 /**
  * Runs the operator control code. This function will be started in its own task

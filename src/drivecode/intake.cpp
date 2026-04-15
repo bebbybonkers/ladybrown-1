@@ -15,17 +15,14 @@ bool intakeOn = false;
 void updateIntake() {
     if(controller.get_digital(intakeButton)) {
         if(!intakePressed) {
-            intakeState+=1;
+            intakeOn = !intakeOn;
             intakePressed = true;
-            if(intakeState == 0) {
+            if(!intakeOn) {
                 chain.move_velocity(0);
                 intake.move_velocity(0);
-                intakeOn = false;
-            } else if(intakeState == 1) {
+            } else if(intakeOn) {
                 chain.move_velocity(600);
                 intake.move_velocity(600);
-                intakeState = -1;
-                intakeOn = true;
             }
         } else {
             intakePressed = false;
@@ -44,7 +41,7 @@ Color checkColor() {
     }
 }
 
-
+//sort colors, use yourColor (defined in objects.hpp)
 void colorSort() {
     if(intakeOn) {
         Color color = checkColor();

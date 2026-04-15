@@ -19,3 +19,4 @@ extern bool intakePressed;
 extern bool intakeOn;
 
 void colorSort();
+Color checkColor();
