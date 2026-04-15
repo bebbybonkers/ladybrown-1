@@ -51,7 +51,7 @@ void colorSort() {
         if(color != yourColor) {
             pros::delay(delayTime);
             diverter.set_value(true);
-        } else if(color == BLUE) {
+        } else if(color == yourColor) {
             diverter.set_value(false);
         } else if (color == NONE) {
             diverter.set_value(false);

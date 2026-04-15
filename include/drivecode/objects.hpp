@@ -22,6 +22,7 @@ extern int chainPort;
 extern char sortPort;
 extern char diverterPort;
 extern char clampPort;
+extern char knockerPort;
 
 // controls
 extern pros::controller_digital_e_t intakeButton;
@@ -30,6 +31,7 @@ extern pros::controller_digital_e_t trapdoorButton;
 extern pros::controller_digital_e_t wingButton;
 extern pros::controller_digital_e_t clampButton;
 extern pros::controller_digital_e_t stakeButton;
+extern pros::controller_digital_e_t knockerButton;
 
 // color sensor values
 extern int redMin;

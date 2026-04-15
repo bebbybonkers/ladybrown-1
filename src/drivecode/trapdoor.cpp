@@ -1,27 +1,27 @@
-// #include "drivecode/trapdoor.hpp"
-// #include "drivecode/objects.hpp"
-// // trapdoor code (switch to midgoal scoring)
-// pros::adi::AnalogOut trapdoor(trapdoorPort);
+#include "drivecode/knocker.hpp"
+#include "drivecode/objects.hpp"
+// knocker code - knock down mogos
+pros::adi::AnalogOut knocker(knockerPort);
 
-// int trapdoorState = 0;
-// bool trapdoorButtonPressed = false;
+int knockerState = 0;
+bool knockerButtonPressed = false;
 
-// // trapdoor uses state system
-// void updateTrapdoor() {
-//     if(controller.get_digital(trapdoorButton)) { 
-//         if(!trapdoorButtonPressed) {
-//             trapdoorState++;
-//             trapdoorButtonPressed = true;
-//             if(trapdoorState == 0) {
-//                 trapdoor.set_value(false); 
-//             } else if(trapdoorState == 1) {
-//                 trapdoor.set_value(true);
-//             } else if(trapdoorState == 2) {
-//                 trapdoor.set_value(false);
-//                 trapdoorState = 0;
-//             }
-//         }
-//     } else {
-//         trapdoorButtonPressed = false;
-//     }
-// }
+// knocker uses state system
+void updateKnocker() {
+    if(controller.get_digital(knockerButton)) { 
+        if(!knockerButtonPressed) {
+            knockerState++;
+            knockerButtonPressed = true;
+            if(knockerState == 0) {
+                knocker.set_value(false); 
+            } else if(knockerState == 1) {
+                knocker.set_value(true);
+            } else if(knockerState == 2) {
+                knocker.set_value(false);
+                knockerState     = 0;
+            }
+        }
+    } else {
+        knockerButtonPressed = false;
+    }
+}

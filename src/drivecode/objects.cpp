@@ -9,16 +9,17 @@ int chainPort = 0;
 char diverterPort = 'A';
 char sortPort = 'A';
 char clampPort = 'A';
+char knockerPort = 'A';
 // motor groups and for drivetrain
 pros::MotorGroup leftMotors({0,0,0});
 pros::MotorGroup rightMotors({0,0,0});
-
 // controller defintion
 pros::Controller controller(pros::E_CONTROLLER_MASTER);
 //controls
 pros::controller_digital_e_t intakeButton = pros::E_CONTROLLER_DIGITAL_L1;
-pros::controller_digital_e_t clampButton = pros::E_CONTROLLER_DIGITAL_UP;
+pros::controller_digital_e_t clampButton = pros::E_CONTROLLER_DIGITAL_L2;
 pros::controller_digital_e_t stakeButton = pros::E_CONTROLLER_DIGITAL_R1;
+pros::controller_digital_e_t knockerButton = pros::E_CONTROLLER_DIGITAL_R2;
 
 // optical sensor color values
 int redMin = 0;
