@@ -1,10 +1,8 @@
 #include "main.h"
 #include "drivecode/intake.hpp"
-#include "drivecode/loader.hpp"
-#include "drivecode/wing.hpp"
-#include "drivecode/scoring.hpp"
 #include "drivecode/objects.hpp"
-#include "drivecode/trapdoor.hpp"
+#include "drivecode/stake.hpp"
+#include "drivecode/clamp.hpp"
 #include "lemlib/api.hpp"
 
 
@@ -86,10 +84,9 @@ void opcontrol() {
 	while(true){
 		// update all subsystems
         updateIntake();
-        updateLoader();
-        updateScoring();
-        updateTrapdoor();
-		updateWing();
+		colorSort();
+        updateClamp();
+		updateStake();
 		
 		// double stick arcade drive
 		chassis.arcade(controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y),
