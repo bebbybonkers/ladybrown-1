@@ -16,9 +16,7 @@ void updateKnocker() {
                 knocker.set_value(false); 
             } else if(knockerState == 1) {
                 knocker.set_value(true);
-            } else if(knockerState == 2) {
-                knocker.set_value(false);
-                knockerState     = 0;
+                knockerState = -1;
             }
         }
     } else {
