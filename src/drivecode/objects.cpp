@@ -10,6 +10,7 @@ char diverterPort = 'A';
 char sortPort = 'A';
 char clampPort = 'A';
 char knockerPort = 'A';
+int distanceSensorPort = 0;
 // motor groups and for drivetrain
 pros::MotorGroup leftMotors({0,0,0});
 pros::MotorGroup rightMotors({0,0,0});
@@ -26,7 +27,9 @@ int redMin = 0;
 int redMax = 0;
 int blueMin = 0;
 int blueMax = 0;
-int delayTime = 500; //diverter delay time
+//distance sensor before piston
+int minDistance = 0;
+int delayTime = 100; //diverter delay time, ms
 Color yourColor = BLUE; //set this to your alliance color for sorting
 
 // drivetrain definition

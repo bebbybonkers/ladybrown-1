@@ -23,6 +23,8 @@ extern char sortPort;
 extern char diverterPort;
 extern char clampPort;
 extern char knockerPort;
+extern int distanceSensorPort;
+extern int minDistance;
 
 // controls
 extern pros::controller_digital_e_t intakeButton;

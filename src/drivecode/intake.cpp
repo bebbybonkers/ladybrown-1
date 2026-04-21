@@ -11,6 +11,7 @@ int intakeState = 0;
 bool intakePressed = false;
 bool intakeOn = false;
 
+
 //intake updates based on state
 void updateIntake() {
     if(controller.get_digital(intakeButton)) {
@@ -45,7 +46,7 @@ Color checkColor() {
 void colorSort() {
     if(intakeOn) {
         Color color = checkColor();
-        if(color != yourColor) {
+        if(color != yourColor && minDistance > distance.get()) {
             pros::delay(delayTime);
             diverter.set_value(true);
         } else if(color == yourColor) {
