@@ -28,7 +28,7 @@ int redMax = 0;
 int blueMin = 0;
 int blueMax = 0;
 //distance sensor before piston
-int minDistance = 0;
+int minDistance = 100;
 int delayTime = 100; //diverter delay time, ms
 Color yourColor = BLUE; //set this to your alliance color for sorting
 
