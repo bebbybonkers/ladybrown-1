@@ -17,6 +17,8 @@ void updateStake() {
                 stake.move_velocity(0);
             } else if(stakeState == 1) {
                 stake.move_velocity(600);
+            } else if(stakeState == 2) {
+                stake.move_velocity(-600);
                 stakeState = -1;
             }
         } else {
